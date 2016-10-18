@@ -15,6 +15,7 @@ public class Ex13_Map {
         mapToSquares();
         mapToHalves();
         mapToStrings();
+        mapToWidget();
     }
 
     public static void mapToSquares() {
@@ -60,5 +61,20 @@ public class Ex13_Map {
             .collect(Collectors.toList());
 
         System.out.printf("Strings: %s%n", mapped);
+    }
+
+    public static void mapToWidget() {
+        ArrayList<Integer> ints
+            = new ArrayList<>();
+        Collections.addAll(
+            ints, 3, 10, 6, 1, 4, 8, 2, 5, 9, 7);
+
+        // Map to widgets
+        List<Widget> mapped = ints
+            .stream()
+            .map(a ->  new Widget(a))
+            .collect(Collectors.toList());
+
+        System.out.printf("Widget: %s%n", mapped);
     }
 }

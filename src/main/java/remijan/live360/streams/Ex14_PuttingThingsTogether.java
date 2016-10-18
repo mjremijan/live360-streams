@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
  *
  * @author Michael Remijan mjremijan@yahoo.com @mjremijan
  */
-public class Ex13_PuttingThingsTogether {
+public class Ex14_PuttingThingsTogether {
 
     public static void main(String[] args) {
         oddSquareSorted();
