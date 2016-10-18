@@ -2,14 +2,13 @@ package remijan.live360.streams;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 /**
  *
  * @author Michael Remijan mjremijan@yahoo.com @mjremijan
  */
-public class Ex01_BeforeFunctional {
+public class Ex02_AfterLambda {
     public static void main(String[] args) {
         List<Name> names
             = new ArrayList<>();
@@ -20,12 +19,9 @@ public class Ex01_BeforeFunctional {
         );
         System.out.printf("Before: %s%n", names);
 
-        Collections.sort(names, new Comparator<Name>() {
-            @Override
-            public int compare(Name o1, Name o2) {
-                return o1.getLastName().compareTo(o2.getLastName());
-            }
-        });
+        Collections.sort(names
+            , (n1, n2) -> n1.getLastName().compareTo(n2.getLastName())
+        );
         System.out.printf("After: %s%n", names);
     }
 }
