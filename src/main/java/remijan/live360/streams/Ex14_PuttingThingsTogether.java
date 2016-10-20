@@ -61,7 +61,7 @@ public class Ex14_PuttingThingsTogether {
 
     List<Invoice> sorted = ints.stream()
       .map(a -> finder.findById(a))
-      .filter(i -> i.getBillingDate().getMonth().compareTo(Month.JUNE) > 0)
+      .filter(i -> i.getBillingDate().getMonth().compareTo(Month.JUNE) >= 0)
       .sorted((i1, i2) -> i2.getBillingAmount().compareTo(i1.getBillingAmount()))
       .collect(Collectors.toList());
 
